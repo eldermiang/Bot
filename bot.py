@@ -5,16 +5,20 @@ import win32con
 import ctypes
 from threading import Event
 
+# System Variables
 exit = Event()
 user32 = ctypes.windll.user32
 covCount = 0
 mysticCount = 0
 refreshCount = 0
+
 # Screen resolution
 length = user32.GetSystemMetrics(0)
 height = user32.GetSystemMetrics(1)
 
-exit.wait(2)
+# System start delay
+exit.wait(3)
+
 # Mouse click
 def click():
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)
@@ -45,7 +49,18 @@ def buyBookmark():
         pyautogui.moveTo(mystic.x+225, mystic.y+20)
         click()
         buy()
-        
+
+# Print bot stats
+def printStats():
+    global refreshCount
+    global covCount
+    global mysticCount
+    print("Program Terminated")
+    print("************Stats************")
+    print("Refresh Count: " + str(refreshCount))
+    print("Covenant Count: " + str(covCount))
+    print("Mystic Count: " + str(mysticCount))
+    print("*****************************")
 
 # Run program in loop as long as q is not pressed
 while not exit.is_set():
@@ -66,9 +81,6 @@ while not exit.is_set():
             exit.wait(1)
     # Terminate program
     if keyboard.is_pressed('q'):
-        print("************Stats************")
-        print("Refresh Count:" + str(refreshCount))
-        print("Covenant Count: " + str(covCount))
-        print("Mystic Count: " + str(mysticCount))
-        print("*****************************")
+        printStats()
         exit.set()
+        input()
