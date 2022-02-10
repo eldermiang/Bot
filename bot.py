@@ -13,8 +13,8 @@ mysticCount = 0
 refreshCount = 0
 
 # Screen resolution
-length = user32.GetSystemMetrics(0)
-height = user32.GetSystemMetrics(1)
+length = user32.GetSystemMetrics(78)
+height = user32.GetSystemMetrics(79)
 
 # System start delay
 exit.wait(3)
@@ -63,6 +63,7 @@ def printStats():
     print("*****************************")
 
 # Run program in loop as long as q is not pressed
+print("Program Running")
 while not exit.is_set():
     refresh = pyautogui.locateCenterOnScreen('Images/Refresh.PNG', region=(0, 0, length, height), grayscale=False, confidence=0.70)
     confirm = pyautogui.locateCenterOnScreen('Images/Confirm.PNG', region=(0, 0, length, height), grayscale=False, confidence=0.70)

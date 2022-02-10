@@ -5,5 +5,5 @@ setup(
     version='1.0',
     description='A shop bot',
     author='eldermiang',
-    install_requires=['keyboard', 'pyautogui', 'pywin32']
+    install_requires=['keyboard', 'pyautogui', 'pywin32', 'pillow', 'opencv-python']
 )
