@@ -10,3 +10,5 @@ Use Instructions
 2. Launch the 'bot.py' file
 3. Hold 'q' to shutdown the bot (Note: This may take a short while as the bot has to complete its current cycle first)
 or close the file manually (may be difficult)
+
+NOTE: If the program does not detect the shop elements on its own, it would be a good idea to replace the images in the image folder with your own images.
