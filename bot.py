@@ -65,8 +65,8 @@ def buy():
 
 # Locate bookmark and buy in shop
 def buyBookmark():
-    covenant = pyautogui.locateCenterOnScreen('Images/Covenant.PNG', region=(0, 0, length, height), grayscale=False, confidence=0.70)
-    mystic = pyautogui.locateCenterOnScreen('Images/Mystic.PNG', region=(0, 0, length, height), grayscale=False, confidence=0.70)
+    covenant = pyautogui.locateCenterOnScreen('Images/Covenant.PNG', region=(0, 0, length, height), grayscale=False, confidence=0.85)
+    mystic = pyautogui.locateCenterOnScreen('Images/Mystic.PNG', region=(0, 0, length, height), grayscale=False, confidence=0.85)
     if covenant is not None:
         global covCount
         covCount += 1
@@ -97,8 +97,8 @@ print("Program Running")
 setup()
 print("Starting refresh")
 while not exit.is_set():
-    refresh = pyautogui.locateCenterOnScreen('Images/Refresh.PNG', region=(0, 0, length, height), grayscale=False, confidence=0.85)
-    confirm = pyautogui.locateCenterOnScreen('Images/Confirm.PNG', region=(0, 0, length, height), grayscale=False, confidence=0.85)
+    refresh = pyautogui.locateCenterOnScreen('Images/Refresh.PNG', region=(0, 0, length, height), grayscale=False, confidence=0.70)
+    confirm = pyautogui.locateCenterOnScreen('Images/Confirm.PNG', region=(0, 0, length, height), grayscale=False, confidence=0.70)
     # Refresh shop and confirm
     if refresh is not None:
         pyautogui.moveTo(refresh)
